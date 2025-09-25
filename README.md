@@ -82,12 +82,16 @@ git clone https://github.com/dragozzine/PhoDyMM.git
 
 2. Go into the src directory and compile lcout and demcmc
 
-3. Go into the runs/Kepler-36 directory, designed for initial testing 
-
-4. Examine the lightcurve model using this script: ``` ./lightcurve_runscript.sh ``` This should take a few seconds, generate diagnostic output, and 
+3. Go into the runs/Kepler-36 directory, designed for initial testing
+   
+4. Run ``` sed -i 's/\r$//' lightcurve_runscript.sh demcmc_runscript.sh restart.sh ``` to temporarily fix Windows (CRLF) line endings or a bad shebang
+  
+5. Run ``` chmod u+x lightcurve_runscript.sh demcmc_runscript.sh restart.sh ``` to make the script executable
+  
+6. Examine the lightcurve model using this script: ``` ./lightcurve_runscript.sh ``` This should take a few seconds, generate diagnostic output, and 
 produce multiple output figures. These figures should be compared to the figures in Ragozzine et al. 2020 (or in the /docs directory)
 
-5. Do a short test DEMCMC run using this script:
+7. Do a short test DEMCMC run using this script:
 ```
 ./demcmc_runscript.sh
 ```
